@@ -11,6 +11,7 @@ router.post('/', isLoggedIn, workoutCtrl.create)
 router.get('/:id', workoutCtrl.show)
 router.post('/:id/goals', workoutCtrl.addGoal)
 
+
 export {
   router
 }

@@ -27,13 +27,14 @@ function create (req, res) {
   req.body.owner = req.user.profile._id
   Workout.create(req.body)
   .then(workout => {
-    res.redirect('/workouts')
+    res.redirect(`/workouts/${workout._id}`)
   })
   .catch(error => {
     console.log(error)
     res.redirect('/workouts')
   })
 }
+
 
 function show(req, res) {
   Workout.findById(req.params.id)
@@ -65,10 +66,15 @@ function addGoal(req, res) {
   })
 }
 
+function todo(req, res) {
+  
+}
+
 export {
   index,
   newWorkout as new,
   create,
   show,
   addGoal,
+  todo,
 }

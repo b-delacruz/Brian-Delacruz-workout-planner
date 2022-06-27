@@ -1,0 +1,43 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <section>
+    <h1>Workout Details</h1>
+    <h2>Try A New Workout </h2>
+    <a href="/workouts"> 
+      <h3>or go back to the list!</h3>
+    </a>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Description</th>
+
+        </tr>
+      </thead>
+      <tbody>
+  
+          <tr>
+            <td> <%= workout.type %></td>
+            <td> <%= workout.name %></td>
+            <td> <%= workout.description %></td>
+          </tr>
+      </tbody>
+    </table>
+</main>
+
+<section>
+  <form action="/workouts/<%= workout._id %>/goals" method="POST">
+    <label for="">Goal</label>
+      <input type="text" name="goals" id="">
+
+    <label for="">Date Completed</label>
+      <input type="date" required>
+
+    <button type="submit">+</button>
+  </form>
+</section>
+<%- include('../partials/footer') %>

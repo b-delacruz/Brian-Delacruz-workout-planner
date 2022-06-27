@@ -36,7 +36,22 @@ function create (req, res) {
 }
 
 function show(req, res) {
-  console.log("View Details")
+  Workout.findById(req.params.id)
+  .populate('owner')
+  .then(workout => {
+    res.render('workouts/show', {
+      title: "Workout Details",
+      workout: workout,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function addGoal(req, res) {
+  console.log('ADD GOAL')
 }
 
 export {
@@ -44,4 +59,5 @@ export {
   newWorkout as new,
   create,
   show,
+  addGoal,
 }

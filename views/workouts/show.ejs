@@ -1,0 +1,25 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Workouts</h1>
+  <h2>Try A New Workout </h2>
+  <a href="/workouts/new"> 
+    <h3>or add one to the list!</h3>
+  </a>
+
+
+	<ul>
+    <% workouts.forEach(workout => { %>
+      <li>
+        <a href="/workouts/<%= workout._id %>"><%= workout.name %> 
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+  
+</section>
+
+<%- include('../partials/footer') %>
+
+

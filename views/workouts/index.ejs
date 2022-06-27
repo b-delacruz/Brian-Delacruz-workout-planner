@@ -7,10 +7,19 @@
   <a href="/workouts/new"> 
     <h3>or add one to the list!</h3>
   </a>
-	<ul>
 
 
-  </ul>
+	<tbody>
+
+    <% workouts.forEach(function(workout) { %>
+      <tr>
+        <td> <%= workout.type %></td>
+        <td> <%= workout.name %></td>
+        <td> <%= workout.description %></td>
+    <% }) %>
+      </tr>
+  </tbody>
+  
 </section>
 
 <%- include('../partials/footer') %>

@@ -51,7 +51,18 @@ function show(req, res) {
 }
 
 function addGoal(req, res) {
-  console.log('ADD GOAL')
+  console.log(req.body)
+  Workout.findById(req.params.id)
+  .then(workout => {
+    workout.goal.push(req.body)
+    workout.save ()
+    .then(() => {
+      res.redirect(`/workouts/${workout._id}`)
+    })
+  })
+  .catch(error => {
+    res.redirect('/')
+  })
 }
 
 export {

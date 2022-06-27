@@ -32,12 +32,37 @@
 <section>
   <form action="/workouts/<%= workout._id %>/goals" method="POST">
     <label for="">Goal</label>
-      <input type="text" name="goals" id="">
+      <input type="text" name="goal" id="">
 
-    <label for="">Date Completed</label>
-      <input type="date" required>
+    <label for="">Date</label>
+      <input type="date" name="date" required>
 
     <button type="submit">+</button>
   </form>
+
+  <div>Goals:</div>
+  <% if(workout.goal.length) { %> 
+    <table>
+      <thead>
+        <tr>
+          <th>Goal</th>
+          <th>Date</th>
+          <th>Completed?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% workout.goal.forEach(function(goal) { %>
+          <tr>
+            <td><%= goal.goal %></td>
+            <td><%= goal.date %> </td>
+            <td><input type="checkbox"></td>
+         </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Goals</h3>
+  <% } %>
+
 </section>
 <%- include('../partials/footer') %>

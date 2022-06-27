@@ -4,7 +4,13 @@ const Schema = mongoose.Schema
 
 const goalSchema = new Schema({
   goal: String,
-  date: Date,
+  date: {
+    type: Date,
+    default: function() {
+      const today = new Date()
+      return today
+    }
+  }
 }, {
   timestamps: true,
 })

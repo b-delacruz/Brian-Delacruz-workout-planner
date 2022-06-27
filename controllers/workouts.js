@@ -35,10 +35,13 @@ function create (req, res) {
   })
 }
 
-
+function show(req, res) {
+  console.log("View Details")
+}
 
 export {
   index,
   newWorkout as new,
   create,
+  show,
 }

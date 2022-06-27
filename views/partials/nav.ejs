@@ -1,12 +1,21 @@
   <% if (!user) { %>
     <link rel="stylesheet" href="/stylesheets/siwg.css">
+    <a href="/auth/google" class="siwg-link">
+      <button type="submit" class="siwg">
+        <img id="siwg-image" alt="Sign in with Google" />
+      </button>
+    </a>
   <% } %>
 </head>
 <body>
   <nav>
     Workout Planer
+
     <a href="/workouts">
       Workouts
+    </a>
+    <a href="/workouts/new">
+      Add Workout
     </a>
 
 

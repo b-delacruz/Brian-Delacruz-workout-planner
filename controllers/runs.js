@@ -35,24 +35,41 @@ function create (req, res) {
 }
 
 
-// function show(req, res) {
-//   Workout.findById(req.params.id)
-//   .populate('owner')
-//   .then(workout => {
-//     res.render('todos/new', {
-//       title: "Workout Details",
-//       workout: workout,
-//     })
-//   })
-//   .catch(error => {
-//     console.log(error)
-//     res.redirect('/')
-//   })
-// }
+function show(req, res) {
+  Run.findById(req.params.id)
+  .populate('owner')
+  .then(run => {
+    res.render('runs/show', {
+      title: "Run Details",
+      run,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function easyRun(req, res) {
+  Run.findById(req.params.id)
+  .then(run => {
+    
+    run.easy = !run.easy
+    run.save()
+    .then(() => {
+      res.redirect(`/runs/${run._id}`)
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/runs')
+  })
+}
 
 export {
   index,
   newRun as new,
   create,
-  // show,
+  show,
+  easyRun,
 }

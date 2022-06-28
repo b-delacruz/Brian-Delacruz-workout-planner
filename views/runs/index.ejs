@@ -16,13 +16,19 @@
     </thead>
     <tbody>
       <% runs.forEach(function(run) { %>
+        
         <tr>
-          <td> <%= run.date %></td>
-          <td> <%= run.distance %></td>
-          <td> <%= run.pace %></td>
-          <td> <%= run.location %></td>
+            <td><%= run.date %></td>
+            <td><%= run.distance %></td>
+            <td><%= run.pace %></td>
+            <td>
+              <a href="/runs/<%= run._id %>">
+                <%= run.location %>
+              </a>
+            </td>
       <% }) %>
         </tr>
+        
     </tbody>
   </table>
   <a href="/runs/new"> 

@@ -6,8 +6,9 @@ const router = Router()
 
 router.get('/', runCtrl.index )
 router.get('/new', runCtrl.new)
-router.post('/', runCtrl.create)
 router.post('/', isLoggedIn, runCtrl.create)
+router.get('/:id', runCtrl.show)
+router.patch('/:id/easy-run', isLoggedIn, runCtrl.easyRun)
 
 
 

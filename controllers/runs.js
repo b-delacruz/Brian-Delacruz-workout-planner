@@ -67,7 +67,31 @@ function easyRun(req, res) {
 }
 
 function edit(req, res) {
-console.log('edit button')
+  Run.findById(req.params.id)
+  .then(run => {
+    res.render('runs/edit', {
+      title:'Edit Run',
+      run,
+    })
+  })
+}
+
+function update(req, res) {
+  Run.findById(req.params.id)
+  .then(run => {
+    if (run.owner.equals(req.user.profile._id)) {
+      run.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`/runs/${run._id}`)
+      })
+    } else {
+      throw new Error ('Not Authorized')
+    }
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/runs')
+  })
 }
 
 export {
@@ -76,5 +100,6 @@ export {
   create,
   show,
   easyRun,
-  edit
+  edit,
+  update,
 }

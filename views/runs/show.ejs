@@ -44,7 +44,12 @@
     </button>
   </form>
 <% } %>
-</main>
+
+<% if (run.owner.equals(user?.profile._id)) { %>
+<form action="/runs/<%= run._id %>/edit" method="GET">
+  <button type="submit">Edit Run Details</button>
+</form>
+<% } %>
 
 </section>
 <%- include('../partials/footer') %>

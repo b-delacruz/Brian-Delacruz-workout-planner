@@ -16,6 +16,7 @@
     </thead>
     <tbody>
       <% runs.forEach(function(run) { %>
+        <% if (run.owner.equals(user?.profile._id)) { %>
         
         <tr>
             <td><%= run.date %></td>
@@ -26,9 +27,9 @@
                 <%= run.location %>
               </a>
             </td>
+            <% } %>     
       <% }) %>
         </tr>
-        
     </tbody>
   </table>
   <a href="/runs/new"> 

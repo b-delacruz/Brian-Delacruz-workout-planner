@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/runs/new.css">
+
+<section>
+  <h1>ADD RUN</h1>
+
+  <form action="/runs" method="POST">
+    <div>
+      <label for="run-date"> Date</label>
+      <input type="date" name="date" autocomplete="off"> 
+    </div>
+    <div>
+      <label for="run-distance">Distance</label>
+      <input type="number" name="distance" id="run-distance">
+    </div>
+    <div>
+      <label for="run-pace">Pace</label>
+      <input type="number" name="pace" id="run-pace">
+    </div>
+    <div>
+      <label for="run-location">Location</label>
+      <input type="text" name="location" id="run-location">
+    </div>
+
+    <button type="submit" id="submit-Btn">Submit</button>
+  </form>
+
+</section>
+
+<%- include('../partials/footer') %>

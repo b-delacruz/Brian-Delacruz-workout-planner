@@ -1,0 +1,33 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <section>
+    <h1>My Runs</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Miles</th>
+        <th>Pace</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% runs.forEach(function(run) { %>
+        <tr>
+          <td> <%= run.date %></td>
+          <td> <%= run.distance %></td>
+          <td> <%= run.pace %></td>
+          <td> <%= run.location %></td>
+      <% }) %>
+        </tr>
+    </tbody>
+  </table>
+  <a href="/runs/new"> 
+    <button> Add Run </button>
+  </a>
+  </section>
+</main>
+<%- include('../partials/footer') %>

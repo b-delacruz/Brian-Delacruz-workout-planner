@@ -1,5 +1,21 @@
 <%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% } %>
+
+ <% if (user) { %>
+  <nav> 
+    <a href="/profiles">
+      <button>
+        Profiles
+      </button>
+    </a>
+    <a href="/auth/logout">
+      <button type="submit">Logout
+  
+      </button>
+  </nav>
+<% } %>
 
 <main>
   <h1>Welcome <%= user ? user.profile.name : "User" %></h1>
@@ -14,6 +30,24 @@
 
   <% if (user) { %>
   
+    <h1>
+      <div>
+        <a href="/runs">
+          My Runs
+        </a>
+      </div>
+      <div>
+        <a href="/workouts/new">
+          Races
+        </a>
+      </div>
+      <div>
+        <a href="/profiles">
+          Trainers
+        </a>
+      </div>
+    </h1>
+    
   <% } else { %>
     <a href="/auth/google" class="siwg-link">
       <button type="submit" class="siwg">

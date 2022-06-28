@@ -15,18 +15,19 @@ const goalSchema = new Schema({
   timestamps: true,
 })
 
-const workoutSchema = new Schema({
-  type: String,
-  name: String,
-  description: String,
+const runSchema = new Schema({
+  date: Date,
+  distance: Number,
+  pace: Number,
+  location: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   goal: [goalSchema],
 }, {
   timestamps: true,
 })
 
-const Workout = mongoose.model('Workout', workoutSchema)
+const Run = mongoose.model('Run', runSchema)
 
 export {
-  Workout,
+  Run,
 }

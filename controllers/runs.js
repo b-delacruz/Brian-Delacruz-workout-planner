@@ -94,6 +94,24 @@ function update(req, res) {
   })
 }
 
+function deleteRun (req, res) {
+  Run.findByIdAndDelete(req.params.id)
+  .then(run => {
+    if (run.owner.equals(req.user.profile._id)) {
+      run.delete()
+      .then(() => {
+        res.redirect('/runs')
+      })
+    } else {
+      throw new Error ('Not Authorized')
+    }
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/runs')
+  })
+}
+
 export {
   index,
   newRun as new,
@@ -102,4 +120,5 @@ export {
   easyRun,
   edit,
   update,
+  deleteRun as delete,
 }

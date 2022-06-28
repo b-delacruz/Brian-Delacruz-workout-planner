@@ -1,0 +1,47 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (profile.avatar) { %>
+    <div>
+      <img 
+        class="profile-avatar"
+        src="<%= profile.avatar %>" 
+        alt="<%= profile.name %> avatar"
+      >
+    </div>
+  <% } %>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+</main>
+
+<h1>Number of Runs Posted</h1>
+<h1>Number of Races Suggested</h1>
+<h2>Comment</h2>
+
+<div class="card-footer">
+
+    <form action="/profiles/<%= profile._id %>/comments" method="POST">
+      <input
+      type="text"
+      name="content"
+      placeholder="Leave a comment..."
+      autocomplete="off"
+      required
+      />
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+  <div>
+    
+    <p>
+      <% profile.comments.forEach(comment => { %>
+        
+        <%= comment.content %>
+        <% }) %>
+        
+
+  </p>
+</div>
+<%- include('../partials/footer') %>

@@ -1,8 +1,17 @@
 import mongoose from 'mongoose'
 
-const profileSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+const commentSchema = new Schema({
+  content: String,
+}, {
+  timestamps: true,
+})
+
+const profileSchema = new Schema({
   name: String,
   avatar: String,
+  comments: [commentSchema]
 }, {
   timestamps: true
 })

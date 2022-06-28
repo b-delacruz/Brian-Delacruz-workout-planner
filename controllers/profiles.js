@@ -17,6 +17,36 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
+    res.render('profiles/show', {
+      title: `${profile.name}'s profile`,
+      profile,
+      isSelf,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/profiles')
+  })
+}
+
+function createComment(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.comments.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${profile._id}`)
+    })
+  })
+}
+
 export {
   index,
+  show,
+  createComment,
+
 }

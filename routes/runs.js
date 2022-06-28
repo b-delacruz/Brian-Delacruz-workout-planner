@@ -9,6 +9,7 @@ router.get('/new', runCtrl.new)
 router.post('/', isLoggedIn, runCtrl.create)
 router.get('/:id', runCtrl.show)
 router.patch('/:id/easy-run', isLoggedIn, runCtrl.easyRun)
+router.get('/:id/edit', runCtrl.edit)
 
 
 

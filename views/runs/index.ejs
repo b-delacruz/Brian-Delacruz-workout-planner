@@ -17,19 +17,18 @@
     <tbody>
       <% runs.forEach(function(run) { %>
         <% if (run.owner.equals(user?.profile._id)) { %>
-        
-        <tr>
+          <tr>
             <td><%= run.date %></td>
             <td><%= run.distance %></td>
             <td><%= run.pace %></td>
             <td>
-              <a href="/runs/<%= run._id %>">
-                <%= run.location %>
-              </a>
+            <a href="/runs/<%= run._id %>">
+              <%= run.location %>
+            </a>
             </td>
-            <% } %>     
+          </tr>
+        <% } %>     
       <% }) %>
-        </tr>
     </tbody>
   </table>
   <a href="/runs/new"> 

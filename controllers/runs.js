@@ -53,7 +53,7 @@ function show(req, res) {
 function easyRun(req, res) {
   Run.findById(req.params.id)
   .then(run => {
-    
+
     run.easy = !run.easy
     run.save()
     .then(() => {
@@ -66,10 +66,15 @@ function easyRun(req, res) {
   })
 }
 
+function edit(req, res) {
+console.log('edit button')
+}
+
 export {
   index,
   newRun as new,
   create,
   show,
   easyRun,
+  edit
 }

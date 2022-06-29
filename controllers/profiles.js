@@ -45,13 +45,23 @@ function createComment(req, res) {
 }
 
 function deleteComment(req, res) {
-  console.log("DELETEEEE!")
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.comments.remove({ _id: req.params.commentId })
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.params.id}`)
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/profiles')
+  })
 }
 
 export {
   index,
   show,
   createComment,
-  deleteComment as delete,
-
+  deleteComment,
 }

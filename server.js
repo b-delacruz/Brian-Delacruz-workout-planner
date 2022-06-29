@@ -55,16 +55,7 @@ app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      sameSite: 'lax',
-    }
-  })
-)
+
 app.use(
   express.static(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')

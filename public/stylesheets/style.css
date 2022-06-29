@@ -25,10 +25,33 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color:#cfd8dc;
+  font-family: Arial, Tahoma, Serif;
   font-size: 1.6rem;
+  color: #263238;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+}
+
+
+nav li{
+  padding-left: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(110, 30, 30);
+}
+
+.login {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
 }
 
 main {
@@ -41,3 +64,16 @@ main {
 h1 {
   font-size: 3.6rem;
 }
+
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+    padding-top: 0.5rem;
+  }
+  nav li {
+    padding: 0.5rem 0;
+  }
+} 

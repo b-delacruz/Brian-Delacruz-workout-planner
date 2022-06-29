@@ -17,7 +17,6 @@ function index(req, res) {
 }
 
 function newRace(req, res) {
-  Profile.findById(req.user.profile._id)
   res.render('races/new', {
     title: "Add Race",
   })
@@ -27,7 +26,6 @@ function create(req, res) {
   req.body.owner = req.user.profile._id
   Race.create(req.body)
   .then(race => {
-    console.log('REQ BODY', req.body)
     res.redirect('/races', {
       title: "New Race"
     })

@@ -53,7 +53,6 @@ function show(req, res) {
 function easyRun(req, res) {
   Run.findById(req.params.id)
   .then(run => {
-
     run.easy = !run.easy
     run.save()
     .then(() => {

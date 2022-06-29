@@ -8,18 +8,23 @@
     <thead>
       <tr>
         <th>Date</th>
+        <th>Name</th>
         <th>Location</th>
-        <th>Distance</th>
-        <th>Delete</th>
+        <th>Time</th>
       </tr>
     </thead>
+    <tbody>
+      <% races.forEach(race => { %>
+      <tr>
+        <td><%= race.date %> </td>
+        <td><%= race.name %> </td>
+        <td><%= race.location %> </td>
+        <td><%= race.time %> </td>
+        </tr>
+      <% }) %>
+    </tbody>
   </table>
   </section>
-<ul>
-  <% races.forEach(race => { %>
-   <li><%= race.name %> </li>
-  <% }) %>
-</ul>
   <a href="/races/new"> 
     <button> Add Race </button>
   </a>

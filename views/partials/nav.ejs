@@ -9,34 +9,16 @@
 </head>
 <body>
   <nav>
-    Workout Planner
-    <div>
-      <a href="/runs">
-        Runs
-      </a>
-    </div>
-    <div>
-      <a href="/races">
-        Races
-      </a>
-    </div>
-    <div>
-      <a href="/profiles">
-        Trainers
-      </a>
-    </div>
+    <h2>Run,Run!</h2>
+    <ul>
+      <li><a href="/runs">Runs</a></li>
+      <li><a href="/races">Races</a></li>
+      <li><a href="/profiles">Runners</a></li>
 
-
-   <% if (user) { %>
-    <a href="/profiles">
-      <button>
-        Profiles
-      </button>
-    </a>
-    <a href="/auth/logout">
-      <button type="submit">Logout
-
-      </button>
-    </a>
-  <% } %>
+    <% if (user) { %>
+      <a href="/"></a><li class="login"><i class="fa-solid fa-circle-user"></i></li></a>
+      <a href="/auth/logout"></a><li class="login"><i class="fa-solid fa-right-from-bracket"></i></li></a>
+    <% } %>
+ 
+    </ul>
   </nav>

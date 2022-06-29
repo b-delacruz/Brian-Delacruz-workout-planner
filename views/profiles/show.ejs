@@ -16,8 +16,11 @@
 
 <h1>Number of Runs Posted</h1>
 <h1>Number of Races Suggested</h1>
-<h2>Comment</h2>
-
+<% if (profile.comments.length) {%> 
+<h2>Comments</h2>
+<%} else {%> 
+  <h2>No Comments</h2>
+<% } %> 
 <div>
     <ul>
     <% profile.comments.forEach(comment => { %>

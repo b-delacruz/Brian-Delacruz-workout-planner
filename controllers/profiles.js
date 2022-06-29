@@ -44,9 +44,14 @@ function createComment(req, res) {
   })
 }
 
+function deleteComment(req, res) {
+  console.log("DELETEEEE!")
+}
+
 export {
   index,
   show,
   createComment,
+  deleteComment as delete,
 
 }

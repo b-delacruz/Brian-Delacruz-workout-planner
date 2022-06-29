@@ -18,8 +18,21 @@
 <h1>Number of Races Suggested</h1>
 <h2>Comment</h2>
 
+<div>
+    <ul>
+    <% profile.comments.forEach(comment => { %>
+      <li><%= comment.content %></li>
+      <div>
+        <form action="/profiles/comments/<%= comment._id %>?_method=DELETE" method="POST">
+          <button type="submit">
+            Delete
+          </button>
+        </form>
+      </div>
+    </ul>
+    <% }) %>
+</div>
 <div class="card-footer">
-
     <form action="/profiles/<%= profile._id %>/comments" method="POST">
       <input
       type="text"
@@ -33,15 +46,4 @@
       </button>
     </form>
   </div>
-  <div>
-    
-    <p>
-      <% profile.comments.forEach(comment => { %>
-        
-        <%= comment.content %>
-        <% }) %>
-        
-
-  </p>
-</div>
 <%- include('../partials/footer') %>

@@ -35,6 +35,8 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as runsRouter } from './routes/runs.js'
 import { router as profilesRouter } from './routes/profiles.js'
+import { router as racesRouter } from './routes/races.js'
+
 
 import { passUserToView } from './middleware/middleware.js'
 
@@ -94,6 +96,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/runs', runsRouter)
 app.use('/profiles', profilesRouter)
+app.use('/races', racesRouter)
 
 
 // catch 404 and forward to error handler

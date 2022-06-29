@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <section>
+    <h1>Upcoming Races</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Distance</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+  </table>
+  </section>
+<ul>
+  <% races.forEach(race => { %>
+   <li><%= race.name %> </li>
+  <% }) %>
+</ul>
+  <a href="/races/new"> 
+    <button> Add Race </button>
+  </a>
+</main>
+
+
+<%- include('../partials/footer') %>

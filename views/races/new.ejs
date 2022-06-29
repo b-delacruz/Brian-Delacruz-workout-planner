@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/races/new.css">
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>ADD RACE</h1>
+
+  <form action="/races" method="POST">
+    <div>
+      <label for="run-date"> Date</label>
+      <input type="date" name="date" autocomplete="off"> 
+    </div>
+    <div>
+      <label for="race-name">Name</label>
+      <input type="text" name="name" id="race-name">
+    </div>
+    <div>
+      <label for="race-location">Location</label>
+      <input type="text" name="location" id="race-location">
+    </div>
+    <div>
+      <label for="race-time">Time</label>
+      <input type="number" name="time" id="race-time">
+    </div>
+
+    <button type="submit" id="submit-Btn">Submit</button>
+  </form>
+
+</section>
+
+<%- include('../partials/footer') %>

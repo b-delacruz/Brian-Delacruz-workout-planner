@@ -7,6 +7,7 @@ const raceSchema = new Schema({
   date: Date,
   location: String,
   time: Number,
+  daytime: Boolean,
   image: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   race: String,

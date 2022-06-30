@@ -1,0 +1,32 @@
+.body-section {
+  display: flex;
+  flex-wrap: wrap;
+  color: green;
+}
+
+.body-section > div {
+  width: calc(100% / 2);
+}
+
+.card-header-3 {
+  display: flex;
+  justify-content: right;
+  margin: auto;
+  font-size: 15px;
+}
+
+.btn {
+  background-color:#0a0a23;
+  color: #fff;
+  border:none;
+  border-radius:10px;
+}
+
+.btn:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}
+
+h1 {
+  color: red;
+}

@@ -6,26 +6,33 @@
   <h1>ADD RACE</h1>
 
   <form action="/races" method="POST">
-    <div>
-      <label for="run-date"> Date</label>
-      <input type="date" name="date" autocomplete="off"> 
+
+    <div class="form-group col-md-3">
+      <label for="race-name"> Name of Race:</label>
+      <input type="text" name="name" class="form-control" id="race-name">
     </div>
-    <div>
-      <label for="race-name">Name</label>
-      <input type="text" name="name" id="race-name">
+
+    <div class="form-group col-md-3">
+      <label for="race-location">Location: </label>
+      <input type="text" name="location" class="form-control" id="race-location">
     </div>
-    <div>
-      <label for="race-location">Location</label>
-      <input type="text" name="location" id="race-location">
+    
+    <div class="form-group col-md-3">
+      <label for="race-date">Date</label>
+      <input type="date" name="date" class="form-control" autocomplete="off" required> 
     </div>
-    <div>
+
+    <div class="form-group col-md-3">
       <label for="race-time">Time</label>
-      <input type="number" name="time" id="race-time">
+      <input type="number" name="time" class="form-control" id="race-time">
+
+
+      <label for="run-state">PM?</label>
+      <input type="checkbox" name="daytime">
     </div>
-
-    <button type="submit" id="submit-Btn">Submit</button>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-
 </section>
 
 <%- include('../partials/footer') %>

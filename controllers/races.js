@@ -24,11 +24,10 @@ function newRace(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
+  req.body.daytime = !!req.body.daytime
   Race.create(req.body)
   .then(race => {
-    res.redirect('/races', {
-      title: "New Race"
-    })
+    res.redirect('/races')
   })
 }
 

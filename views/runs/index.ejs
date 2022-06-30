@@ -1,42 +1,38 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/runs/index.css">
+
 
 <main>
   <section>
     <h1>My Runs</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Miles</th>
-        <th>Pace</th>
-        <th>Location</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% runs.forEach(function(run) { %>
-        <% if (run.owner.equals(user?.profile._id)) { %>
-          <tr>
-            <td><%= run.date %></td>
-            <td><%= run.distance %></td>
-            <td><%= run.pace %></td>
-            <td>
-            <a href="/runs/<%= run._id %>">
-              <%= run.location %>
-            </a>
-            </td>
-            <td>
-              <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-            </td>
-          </tr>
-        <% } %>     
-      <% }) %>
-    </tbody>
-  </table>
+
+
+  <% runs.forEach(function(run) { %>
+    <% if (run.owner.equals(user?.profile._id)) { %>
+    <div class="card">
+      <div class="header-section">
+        <div class="card-header-1"> 
+            <%= run.date.toLocaleString().split(',')[0] %>
+        </div>
+        <div class="card-header-2">
+          <%= run.location%>
+        </div>
+        <div class="card-header-3">
+          <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
+            <button>X</button>
+          </form>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">You ran a total of <%= run.distance %> miles in <%= run.pace %> minutes !
+        </p>
+      </div>
+    </div>
+    <% } %>     
+  <% }) %>
+
   <a href="/runs/new"> 
     <button> Add Run </button>
   </a>

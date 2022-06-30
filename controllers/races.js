@@ -17,8 +17,12 @@ function index(req, res) {
 }
 
 function newRace(req, res) {
-  res.render('races/new', {
-    title: "Add Race",
+  Race.find({})
+  .then(race => {
+    res.render('races/new', {
+      title: "Add Race",
+      race,
+    })
   })
 }
 

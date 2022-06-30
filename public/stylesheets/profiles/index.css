@@ -28,7 +28,9 @@
 
 .card > img {
   border-radius: 10px;
-  height: 96px;
+  height: 200px;
+  width: 200px;
+  margin: auto;
 }
 
 .card-body {
@@ -41,3 +43,4 @@
   font-size: 24px;
   margin: 0 10px;
 }
+

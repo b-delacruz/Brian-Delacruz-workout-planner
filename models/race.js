@@ -4,7 +4,13 @@ const Schema = mongoose.Schema
 
 const raceSchema = new Schema({
   name: String,
-  date: Date,
+  date: {
+    type:Date,
+    default: function() {
+      const today = new Date()
+      return today
+    }
+  },
   location: String,
   time: Number,
   daytime: Boolean,

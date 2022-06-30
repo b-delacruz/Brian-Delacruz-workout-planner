@@ -34,6 +34,7 @@ function show(req, res) {
 }
 
 function createComment(req, res) {
+  req.body.owner = req.user.profile._id
   Profile.findById(req.params.id)
   .then(profile => {
     profile.comments.push(req.body)
@@ -45,19 +46,20 @@ function createComment(req, res) {
 }
 
 function deleteComment(req, res) {
-  Profile.findById(req.params.id)
+  Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.comments.remove({ _id: req.params.commentId })
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.params.id}`)
-    })
+      })
   })
   .catch(error => {
     console.log(error)
     res.redirect('/profiles')
   })
 }
+
 
 export {
   index,

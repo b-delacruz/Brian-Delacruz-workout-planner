@@ -5,11 +5,14 @@
 <main>
   <section>
     <h1>Upcoming Races</h1>
-
+    
+    <a href="/races/new"> 
+      <button> Add Race </button>
+    </a>
 
   <% races.forEach(race => { %>
     <div class="card" style="width: 18rem;">
-      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <img src="https://source.unsplash.com/random/200x200?sig=1" class="card-img-top" alt="Random Img"/>
       <div class="card-body">
         <h5 class="card-title"><%= race.name %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= race.date.toLocaleString().split(',')[0] %></h6>
@@ -37,9 +40,7 @@
   <% }) %>
 
 
-  <a href="/races/new"> 
-    <button> Add Race </button>
-  </a>
+  
 </main>
 
 

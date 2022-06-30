@@ -17,16 +17,16 @@
             <%= run.date.toLocaleString().split(',')[0] %>
         </div>
         <div class="card-header-2">
-          <%= run.location%>
+          <%= run.city %>,<%= run.state %>
         </div>
         <div class="card-header-3">
           <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
-            <button>X</button>
+            <button class="btn">X</button>
           </form>
         </div>
       </div>
       <div class="card-body">
-        <p class="card-text">You ran a total of <%= run.distance %> miles in <%= run.pace %> minutes !
+        <p class="card-text">You ran a total of <%= run.distance %> miles in <%= run.time %> minutes !
         </p>
       </div>
     </div>

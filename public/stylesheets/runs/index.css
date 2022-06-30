@@ -13,9 +13,20 @@
   display: flex;
   justify-content: right;
   margin: auto;
-  font-size: 12px;
+  font-size: 15px;
 }
 
+.btn {
+  background-color:#0a0a23;
+  color: #fff;
+  border:none;
+  border-radius:10px;
+}
+
+.btn:hover {
+  background-color:#002ead;
+  transition: 0.7s;
+}
 
 h1 {
   color: red;

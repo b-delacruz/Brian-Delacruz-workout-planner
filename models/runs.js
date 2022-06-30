@@ -18,8 +18,9 @@ const goalSchema = new Schema({
 const runSchema = new Schema({
   date: Date,
   distance: Number,
-  pace: Number,
-  location: String,
+  time: Number,
+  city: String,
+  state: String,
   easy: Boolean,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   goal: [goalSchema],

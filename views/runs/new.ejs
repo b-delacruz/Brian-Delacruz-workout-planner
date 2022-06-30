@@ -6,26 +6,99 @@
   <h1>ADD RUN</h1>
 
   <form action="/runs" method="POST">
-    <div>
-      <label for="run-date"> Date</label>
-      <input type="date" name="date" autocomplete="off"> 
-    </div>
-    <div>
-      <label for="run-distance">Distance</label>
-      <input type="number" name="distance" id="run-distance">
-    </div>
-    <div>
-      <label for="run-pace">Pace</label>
-      <input type="number" name="pace" id="run-pace">
-    </div>
-    <div>
-      <label for="run-location">Location</label>
-      <input type="text" name="location" id="run-location">
+
+    <div class="form-group col-md-3">
+      <label for="run-distance">How Far Did You Run? (Miles)</label>
+      <input type="number" name="distance" class="form-control" id="run-distance">
     </div>
 
-    <button type="submit" id="submit-Btn">Submit</button>
+    <div class="form-group col-md-3">
+      <label for="run-pace">How Long Did You Run? (Min)</label>
+      <input type="number" name="time" class="form-control" id="run-pace">
+    </div>
+   
+  
+
+      <div class="form-group col-md-3">
+        <label for="run-state">State</label>
+        <select name="state" class="form-control" id="run-location">
+          <option selected>Select Current State</option>
+          <option>AL</option>
+          <option>AK</option>
+          <option>AZ</option>
+          <option>AR</option>
+          <option>AS</option>
+          <option>CA</option>
+          <option>CO</option>
+          <option>CT</option>
+          <option>DE</option>
+          <option>DC</option>
+          <option>FL</option>
+          <option>GA</option>
+          <option>GU</option>
+          <option>HI</option>
+          <option>ID</option>
+          <option>IL</option>
+          <option>IN</option>
+          <option>IA</option>
+          <option>KS</option>
+          <option>KY</option>
+          <option>LA</option>
+          <option>ME</option>
+          <option>MD</option>
+          <option>MA</option>
+          <option>MI</option>
+          <option>MN</option>
+          <option>MS</option>
+          <option>MS</option>
+          <option>MO</option>
+          <option>MT</option>
+          <option>NE</option>
+          <option>NV</option>
+          <option>NH</option>
+          <option>NJ</option>
+          <option>NM</option>
+          <option>NY</option>
+          <option>NC</option>
+          <option>ND</option>
+          <option>CM</option>
+          <option>OH</option>
+          <option>OK</option>
+          <option>OR</option>
+          <option>PA</option>
+          <option>PR</option>
+          <option>RI</option>
+          <option>SC</option>
+          <option>SD</option>
+          <option>TN</option>
+          <option>TX</option>
+          <option>UT</option>
+          <option>VT</option>
+          <option>VA</option>
+          <option>VI</option>
+          <option>WA</option>
+          <option>WV</option>
+          <option>WI</option>
+          <option>WY</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="run-location">City</label>
+        <input type="text" name="city" class="form-control" id="run-location">
+      </div>
+  
+    <div class="form-group col-md-3">
+      <label for="run-date">Date</label>
+      <input type="date" name="date" class="form-control" autocomplete="off" required> 
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-
 </section>
+
+
+<form>
+
+</form>
 
 <%- include('../partials/footer') %>

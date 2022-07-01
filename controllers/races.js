@@ -35,8 +35,28 @@ function create(req, res) {
   })
 }
 
+function deleteRace(req, res) {
+  Race.findByIdAndDelete(req.params.id)
+  .then(race => {
+    req.user.profile._id = req.params.id
+    if (race.owner.equals(req.user.profile._id)) {
+      race.delete()
+      .then(() => {
+        res.redirect('/races')
+      })
+    } else { 
+      throw new Error ('Not Authorized')
+    }
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/races')
+  })
+}
+
 export {
   index,
   newRace as new,
   create,
+  deleteRace as delete,
 }

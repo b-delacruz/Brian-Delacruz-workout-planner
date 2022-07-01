@@ -35,6 +35,16 @@
       <div class="card-body">
         <a href="#" class="card-link">View Race</a>
       </div>
+      <% if (race.owner.equals(user.profile._id)) { %>
+      <form action="/races/<%= race._id %>?_method=DELETE" method="POST" >
+        <div class="card-body">
+          <button>
+           Remove
+          </button>
+          <% } %> 
+        </div>
+        
+      </form>
     </div>
 
   <% }) %>

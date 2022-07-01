@@ -13,11 +13,7 @@
     <% if (run.owner.equals(user?.profile._id)) { %>
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
-        <div class="col-md-4" id="x-btn">
-            <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
-              <button class="btn">X</button>
-            </form>
-        </div>
+        
       <div class="header-section">
         <div class="card-header-1"> 
             <%= run.date.toLocaleString().split(',')[0] %>
@@ -34,18 +30,23 @@
         </p>
       </div>
     </div>
-  </div>
+    <div class="footer-section" id="x-btn">
+      <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
+        <button class="btn">X</button>
+      </form>
+    </div>
 </div>
     <% } %>     
   <% }) %>
-  
-  <a href="/runs/new"> 
-    <button> Add Run </button>
-  </a>
-  <a href="/runs/all"> 
-    <button> All Runs </button>
-  </a>
-  </section>
+</section>
+  <div class="add-all-btn">
+    <a href="/runs/new"> 
+      <button class="btn-run"> Add Run </button>
+    </a>
+    <a href="/runs/all"> 
+      <button class="btn-run"> All Runs </button>
+    </a>
+  </div>
 </main>
 <%- include('../partials/footer') %>
 

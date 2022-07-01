@@ -4,6 +4,7 @@
 <% } %>
 
  <% if (user) { %>
+  <link rel="stylesheet" href="/stylesheets/index.css">
   <nav> 
     <a href="/profiles">
       <i class="fa-solid fa-circle-user"></i>
@@ -27,19 +28,19 @@
   <% if (user) { %>
   
     <h1>
-      <div>
-        <a href="/runs">
+      <div class="div-1">
+        <a class="runners" href="/runs">
           My Runs
         </a>
       </div>
-      <div>
-        <a href="/races">
+      <div class="div-2">
+        <a class="runners" href="/races">
           Races
         </a>
       </div>
-      <div>
-        <a href="/profiles">
-          Trainers
+      <div class="div-3">
+        <a class="runners" href="/profiles">
+          Runners
         </a>
       </div>
     </h1>

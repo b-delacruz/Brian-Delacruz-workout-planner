@@ -1,0 +1,23 @@
+.div{
+  color: red;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.runners{
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

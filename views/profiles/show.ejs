@@ -1,5 +1,6 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/profiles/show.css"/>
 
 <main>
   <% if (profile.avatar) { %>
@@ -14,54 +15,63 @@
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
 </main>
 
-<h1>Number of Runs Posted</h1>
-<h1>Number of Races Suggested</h1>
-<% if (profile.comments.length) {%> 
-<h2>Comments</h2>
-<%} else {%> 
-  <h2>No Comments</h2>
-<% } %> 
-<div>
-  <ul>
+  <h1>Number of Runs Posted</h1>
+  <h1>Number of Races Suggested</h1>
+
+  <% if (profile.comments.length) {%> 
+    <h2>Comments</h2>
+    <%} else {%> 
+      <h2>No Comments</h2>
+    <% } %> 
+
+
     <% profile.comments.forEach(comment => { %>
-      <li><%= comment.content %></li>
-      <div class="btn-container">
+      <div class="card" style="width: 30rem;">
+        <div class="card-header">
+          User
+        </div>
+        <div class="card-body">
 
-        <div id="commentator">
-          commented on 
-          <%=comment.createdAt.toString().substring(0,15) %> at
-          <%=comment.createdAt.toString().substring(16, 21) %>
-      </div>
-      <% if (comment.owner.equals(user.profile._id)) { %>
-       
-        <form action="/profiles/<%= profile._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-        </br>
-          <button type="submit">
-            Delete
-          </button>
-        </form>
-        <% } %>  
-      </div>
-    <% }) %>
-  </ul> 
-</div>
+    <p class="card-text"><%= comment.content %> commented on 
+      <%=comment.createdAt.toString().substring(0,15) %> 
+   
+    </p>
 
-<div class="card-footer">
-    <form action="/profiles/<%= profile._id %>/comments" method="POST">
-      <input
-      type="text"
-      name="content"
-      placeholder="Leave a comment..."
-      autocomplete="off"
-      required
-      />
-      <button type="submit" class="btn btn-primary">
-        Submit
+    <% if (comment.owner.equals(user.profile._id)) { %>
+      
+      <form action="/profiles/<%= profile._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+      </br>
+      <button type="submit" class="btn btn-warning" id="btn-remove">
+        Remove
       </button>
+    </div>
     </form>
+    <% } %> 
+    
+    
+    </ul> 
   </div>
+  
+  <form action="/profiles/<%= profile._id %>/comments" method="POST">
+    <% }) %>
+    <div class="card-footer">
+        <input
+        type="text"
+        name="content"
+        placeholder="Leave a comment..."
+        autocomplete="off"
+        required
+        />
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+      </form>
+  
+    
+      <a class="back-btn" href="/profiles">  
 
-  <a href="/profiles"> 
-    <button class="btn" type="button"> Go Back </button>
-  </a>
-<%- include('../partials/footer') %>
+        Go Back 
+      
+    </a>
+  <%- include('../partials/footer') %>

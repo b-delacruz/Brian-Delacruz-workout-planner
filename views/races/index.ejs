@@ -5,16 +5,17 @@
 <main>
   <section>
     <h1>Upcoming Races</h1>
-    
-    <a href="/races/new"> 
-      <button class="btn" type="button"> Add Race </button>
-    </a>
-    <a href="/profiles"> 
-      <button class="btn" type="button"> View Runners </button>
-    </a>
+   <div class="add-view-btn">
+     <a href="/races/new"> 
+       <button class="btn-race" type="button"> Add Race </button>
+     </a>
+     <a href="/profiles"> 
+       <button class="btn-race" type="button"> View Runners </button>
+     </a>
+   </div> 
 
   <% races.forEach(race => { %>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 30rem;">
       <img src="https://source.unsplash.com/random/200x200?sig=1" class="card-img-top" alt="Random Img"/>
       <div class="card-body">
         <h5 class="card-title"><%= race.name %></h5>

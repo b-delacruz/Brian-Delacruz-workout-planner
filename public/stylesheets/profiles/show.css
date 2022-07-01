@@ -1,0 +1,42 @@
+h1, h2{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+ul, li {
+
+ 
+}
+
+.card-footer{
+  display: flex;
+  justify-content: center;
+}
+
+
+.card{
+  display: flex;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  padding: 15px;
+  margin: 20px auto;
+}
+
+#btn-remove{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+
+.back-btn{
+  color: black;
+  display: flex;
+  justify-content: center;
+  
+  }

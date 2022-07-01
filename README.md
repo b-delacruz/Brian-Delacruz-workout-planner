@@ -22,8 +22,8 @@ Link to [Trello] - [https://trello.com/b/QxjIte8Y/brian-delacruz-workout-planner
 
 # Screenshots: 
 
-![landing page 1](assests/img/../../public/images/assests/landing.png)
-![landing page 2](assests/img/../../public/images/assests/landing2.png)
+![landing page 1](assests/img/../../public/images/assests/runner.png)
+
 
 # Wireframes:
 ![wireframe 1](assests/img/../../public/images/assests/wireframe-1.png)
@@ -49,7 +49,7 @@ Link to [Trello] - [https://trello.com/b/QxjIte8Y/brian-delacruz-workout-planner
 - CSS
 - Bootstrap
 - Fontawesome Kit
-- 
+
 
 # Next Steps: (icebox items)
 

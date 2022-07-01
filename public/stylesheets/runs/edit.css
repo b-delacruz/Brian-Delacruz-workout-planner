@@ -1,0 +1,39 @@
+.btn {
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  background-color: rgba(57, 40, 132, 0.73);
+  border-radius: 50px;
+  font-size: 12px;
+  border-width: 3px;
+}
+
+label{
+  display: flex;
+  color: black;
+  background-color: rgb(187, 94, 199);
+  font-size: 18px;
+  font-weight:450;
+  margin: auto;
+}
+
+input[type="text"], [type="date"], [type="number"] {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-size: 16px;
+}
+
+
+h1{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+h3{
+  background-color: white;
+  margin: auto;
+  width: ;
+}

@@ -48,7 +48,9 @@ function createComment(req, res) {
 function deleteComment(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
+    console.log("======!!!!!!!!!!!!!======",profile)
     profile.comments.remove({ _id: req.params.commentId })
+    console.log("============",profile)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.params.id}`)

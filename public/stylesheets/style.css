@@ -69,15 +69,3 @@ h1 {
   font-size: 3.6rem;
 }
 
-@media only screen and (max-width: 600px) {
-  nav {
-    flex-direction: column;
-  }
-  nav ul {
-    flex-direction: column;
-    padding-top: 0.5rem;
-  }
-  nav li {
-    padding: 0.5rem 0;
-  }
-} 

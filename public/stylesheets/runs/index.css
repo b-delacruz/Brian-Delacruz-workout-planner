@@ -1,12 +1,12 @@
 /* .header-section {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   color: blue;
-  background-color: yellowgreen;
+  
 }
 
 .header-section > div {
-  width: calc(100% / 3);
+  width: calc(100% / 2);
 }
 
 .card-header-3 {
@@ -30,9 +30,7 @@
 
 h1 {
   color: red;
-} */
-
-/*  */
+}  */
 
 .main {
   display: flex;
@@ -76,4 +74,23 @@ h1 {
 .card-title {
   font-size: 24px;
   margin: 0 10px;
+}
+
+#x-btn{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-section{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  color: black;
+  font-size: 12px;
+  font-weight: 500;
+
 }

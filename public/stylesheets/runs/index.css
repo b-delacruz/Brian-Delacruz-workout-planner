@@ -92,5 +92,12 @@ h1 {
   color: black;
   font-size: 12px;
   font-weight: 500;
+}
 
+.card-text{
+  font-size: 14px;
+  text-align: center;
+  width: 180px;
+  color: black;
+  text-decoration: none;
 }

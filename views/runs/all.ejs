@@ -5,18 +5,19 @@
 
 <main>
   <section>
-    <h1>My Runs</h1>
+    <h1>All Runs</h1>
 
 
 
   <% runs.forEach(function(run) { %>
-    <% if (run.owner.equals(user?.profile._id)) { %>
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
-        <div class="col-md-4" id="x-btn">
-            <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
+        <div class="row-md-4" id="x-btn">
+          <% if (run.owner.equals(user?.profile._id)) { %>
+          <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
               <button class="btn">X</button>
             </form>
+            <% } %> 
         </div>
       <div class="header-section">
         <div class="card-header-1"> 
@@ -28,7 +29,7 @@
       </div>
       <div class="card-body">
         <p class="card-text">
-          <a href="/runs/<%= run._id %>/edit">
+          <a href="/runs/<%= run._id %>">
             You ran a total of <%= run.distance %> miles in <%= run.time %> minutes !
           </a>
         </p>
@@ -36,16 +37,15 @@
     </div>
   </div>
 </div>
-    <% } %>     
+      
   <% }) %>
   
-  <a href="/runs/new"> 
-    <button> Add Run </button>
+  <a href="/runs"> 
+    <button> Go Back </button>
   </a>
-  <a href="/runs/all"> 
-    <button> All Runs </button>
+  <a href="/races"> 
+    <button> Upcoming Races </button>
   </a>
   </section>
 </main>
 <%- include('../partials/footer') %>
-

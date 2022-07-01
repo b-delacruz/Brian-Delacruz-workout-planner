@@ -1,5 +1,6 @@
   <% if (!user) { %>
     <link rel="stylesheet" href="/stylesheets/siwg.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <a href="/auth/google" class="siwg-link">
       <button type="submit" class="siwg">
         <img id="siwg-image" alt="Sign in with Google" />
@@ -10,8 +11,18 @@
 <body>
   <nav>
     <h2>Run,Run!</h2>
+
     <ul class="main-nav">
-      <li><a href="/runs">Runs</a></li>
+      <ul class="dropdown">
+        <li class="dropdown">
+          <a href="/runs">Runs <i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+      </ul>
+      <li class="dropdown-content">
+        <a href="/runs/all">All Runsss</a>
+      </li>
+      
       <li><a href="/races">Races</a></li>
       <li><a href="/profiles">Runners</a></li>
 
@@ -27,7 +38,7 @@
         </li>
       </a>
     <% } %>
- 
-    </ul>
+
+  
   </nav>
 

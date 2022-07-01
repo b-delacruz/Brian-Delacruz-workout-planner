@@ -19,7 +19,10 @@ function index(req, res) {
 
 function show(req, res) {
   Profile.findById(req.params.id)
+  .populate("comments")
+  .exec()
   .then(profile => {
+    const ownerName = profile.ownerName
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/show', {
       title: `${profile.name}'s profile`,

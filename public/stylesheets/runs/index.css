@@ -80,10 +80,10 @@ h1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-right: 10px;
 }
 
 .header-section{
- 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,6 +92,7 @@ h1 {
   color: black;
   font-size: 12px;
   font-weight: 500;
+  margin: auto;
 }
 
 .card-text{

@@ -26,8 +26,14 @@
     <% profile.comments.forEach(comment => { %>
       <li><%= comment.content %></li>
       <div class="btn-container">
+
+        <div id="commentator">
+          commented on 
+          <%=comment.createdAt.toString().substring(0,15) %> at
+          <%=comment.createdAt.toString().substring(16, 21) %>
+      </div>
       <% if (comment.owner.equals(user.profile._id)) { %>
-     <img id="commentProfilePic" src="<%=comment.avatar%>">
+       
         <form action="/profiles/<%= profile._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
         </br>
           <button type="submit">
@@ -54,4 +60,8 @@
       </button>
     </form>
   </div>
+
+  <a href="/profiles"> 
+    <button class="btn" type="button"> Go Back </button>
+  </a>
 <%- include('../partials/footer') %>

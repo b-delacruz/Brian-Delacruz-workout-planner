@@ -22,6 +22,7 @@ function newRun (req, res) {
   })
 }
 
+
 function create (req, res) {
   req.body.owner = req.user.profile._id
   Run.create(req.body)
@@ -111,6 +112,16 @@ function deleteRun (req, res) {
   })
 }
 
+function allRuns(req, res) {
+  Run.find({})
+  .then(runs => {
+    res.render('runs/all', {
+      title: "All Runs",
+      runs,
+    })
+  })
+}
+
 export {
   index,
   newRun as new,
@@ -120,4 +131,5 @@ export {
   edit,
   update,
   deleteRun as delete,
+  allRuns,
 }

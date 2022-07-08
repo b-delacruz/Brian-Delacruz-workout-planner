@@ -7,20 +7,7 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
-
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: process.env.GOOGLE_CALLBACK,
-    },
-    function (accessToken, refreshToken, profile, done) {
-      // a user has logged in with OAuth...
-    }
-  )
-)
+import { passUserToView } from './middleware/middleware.js'
 
 
 // connect to MongoDB with mongoose
@@ -34,11 +21,8 @@ import { router as indexRouter } from './routes/index.js'
 // import { router as profilesRouter } from './routes/profiles.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as runsRouter } from './routes/runs.js'
-import { router as profilesRouter } from './routes/profiles.js'
 import { router as racesRouter } from './routes/races.js'
-
-
-import { passUserToView } from './middleware/middleware.js'
+import { router as profilesRouter } from './routes/profiles.js'
 
 // create the express app
 const app = express()
@@ -55,7 +39,6 @@ app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
 app.use(
   express.static(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
@@ -73,8 +56,7 @@ app.use(
     },
   })
 )
-
-// passport middleware
+// passport middleware 
 app.use(passport.initialize())
 app.use(passport.session())
 

@@ -1,4 +1,4 @@
-h1, h2{
+h1, h2, h3{
   display: flex;
   justify-content: center;
   margin: 10px;

@@ -4,10 +4,7 @@
 
 
 <main>
-  <section>
-    <h1>All Runs</h1>
-
-
+  <h1>All Runs</h1>
 
   <% runs.forEach(function(run) { %>
     <div class="card mb-3" style="max-width: 540px;">
@@ -22,7 +19,7 @@
       <div class="card-body">
         <p class="card-text">
           <a href="/runs/<%= run._id %>">
-            <%= run.owner %>  ran a total of <%= run.distance %> miles in <%= run.time %> minutes !
+            Guess who ran a total of <%= run.distance %> miles in <%= run.time %> minutes !
           </a>
         </p>
       </div>
@@ -36,8 +33,8 @@
     </div>
       
   <% }) %>
-  
-</section>
+</main>
+
   <div class="add-all-btn">
     <a href="/runs"> 
       <button class="btn-run"> Go Back </button>
@@ -46,5 +43,4 @@
       <button class="btn-run"> Upcoming Races </button>
     </a>
   </div>
-</main>
 <%- include('../partials/footer') %>

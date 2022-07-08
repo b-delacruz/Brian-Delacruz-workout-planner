@@ -3,15 +3,18 @@
 <link rel="stylesheet" href="/stylesheets/races/index.css">
 
 <main>
-  <section>
     <h1>Upcoming Races</h1>
    <div class="add-view-btn">
      <a href="/races/new"> 
-       <button class="btn-race" type="button"> Add Race </button>
-     </a>
-     <a href="/profiles"> 
-       <button class="btn-race" type="button"> View Runners </button>
-     </a>
+       <button class="btn-race" type="button">
+         Add Race 
+        </button>
+      </a>
+      <a href="/profiles"> 
+       <button class="btn-race" type="button">
+        View Runners 
+        </button>
+      </a>
    </div> 
 
   <% races.forEach(race => { %>
@@ -37,7 +40,7 @@
   
  
       <div class="card-body">
-        <a href="#" class="card-link">View Race</a>
+        <a href="#" class="card-link" hidden>View Race</a>
       </div>
       <% if (race.owner.equals(user.profile._id)) { %>
       <form action="/races/<%= race._id %>?_method=DELETE" method="POST" >
@@ -47,15 +50,11 @@
           </button>
           <% } %> 
         </div>
-        
       </form>
     </div>
 
   <% }) %>
 
-
-  
 </main>
-
 
 <%- include('../partials/footer') %>

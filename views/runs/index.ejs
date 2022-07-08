@@ -4,10 +4,8 @@
 
 
 <main>
-  <section>
-    <h1>My Runs</h1>
-
-
+  
+  <h1>My Runs</h1>
 
   <% runs.forEach(function(run) { %>
     <% if (run.owner.equals(user?.profile._id)) { %>
@@ -38,7 +36,7 @@
 </div>
     <% } %>     
   <% }) %>
-</section>
+</main>
   <div class="add-all-btn">
     <a href="/runs/new"> 
       <button class="btn-run"> Add Run </button>
@@ -47,6 +45,5 @@
       <button class="btn-run"> All Runs </button>
     </a>
   </div>
-</main>
 <%- include('../partials/footer') %>
 

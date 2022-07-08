@@ -44,11 +44,12 @@ Link to [Trello] - [https://trello.com/b/QxjIte8Y/brian-delacruz-workout-planner
 - JavaScript
 - Mongoose
 - MongoDB
-- Express JS
+- Express
 - HTML
 - CSS
 - Bootstrap
 - Fontawesome Kit
+- Node JS
 
 
 # Next Steps: (icebox items)

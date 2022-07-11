@@ -1,11 +1,12 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
 <link rel="stylesheet" href="/stylesheets/runs/index.css">
+<%- include('../partials/nav') %>
 
 
 <main>
-  <h1>All Runs</h1>
 
+  <h1>All Runs</h1>
+  <div class="cardContainer">
   <% runs.forEach(function(run) { %>
     <div class="card mb-3" style="max-width: 540px;">
       <div class="header-section">
@@ -16,6 +17,7 @@
           <%= run.city %>,<%= run.state %>
         </div>
       </div>
+
       <div class="card-body">
         <p class="card-text">
           <a href="/runs/<%= run._id %>">
@@ -23,16 +25,17 @@
           </a>
         </p>
       </div>
+
       <div class="footer-section" id="x-btn">
         <% if (run.owner.equals(user?.profile._id)) { %>
         <form action="/runs/<%= run._id %>?_method=DELETE" method="POST">
             <button class="btn">X</button>
           </form>
-          <% } %> 
+          <% } %>   
+        </div>
       </div>
-    </div>
-      
-  <% }) %>
+    <% }) %>
+  </div>
 </main>
 
   <div class="add-all-btn">

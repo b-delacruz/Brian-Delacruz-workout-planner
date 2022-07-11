@@ -62,10 +62,10 @@ main {
   flex-direction: column;
 }
 
+
 h1 {
   font-size: 3.6rem;
   display: flex;
   justify-content: center;
   margin: 20px;
 }
-

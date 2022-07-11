@@ -1,22 +1,24 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
 <link rel="stylesheet" href="/stylesheets/races/index.css">
+<%- include('../partials/nav') %>
 
 <main>
-    <h1>Upcoming Races</h1>
-   <div class="add-view-btn">
-     <a href="/races/new"> 
-       <button class="btn-race" type="button">
-         Add Race 
-        </button>
-      </a>
-      <a href="/profiles"> 
-       <button class="btn-race" type="button">
-        View Runners 
-        </button>
-      </a>
-   </div> 
+  <h1>Upcoming Races</h1>
 
+  <div class="add-view-btn">
+    <a href="/races/new"> 
+      <button class="btn-race" type="button">
+        Add Race 
+       </button>
+     </a>
+     <a href="/profiles"> 
+      <button class="btn-race" type="button">
+       View Runners 
+       </button>
+     </a>
+  </div> 
+  
+   <div class="cardContainer">
   <% races.forEach(race => { %>
     <div class="card" style="width: 30rem;">
       <img src="https://source.unsplash.com/random/200x200?sig=1" class="card-img-top" alt="Random Img"/>
@@ -26,35 +28,27 @@
         <p class="card-text"></p>
       </div>
       <div class="body-section">
-        <div class="body-1">
-          <li class="list-group-item">
-            <%= race.location %>
-          </li>
-        </div>
-        <div class="body-2">
-          <li class="list-group-item">
-            <%= race.time %><%= race.daytime ? "PM" : "AM" %>
-          </li>
-        </div>
+        <li class="list-group-item">
+          <%= race.location %>
+        </li>
+        <li class="list-group-item">
+          <%= race.time %><%= race.daytime ? "PM" : "AM" %>
+        </li>
       </div>
   
- 
-      <div class="card-body">
-        <a href="#" class="card-link" hidden>View Race</a>
-      </div>
-      <% if (race.owner.equals(user.profile._id)) { %>
+    <% if (race.owner.equals(user.profile._id)) { %>
       <form action="/races/<%= race._id %>?_method=DELETE" method="POST" >
         <div class="card-body">
           <button>
            Remove
           </button>
-          <% } %> 
         </div>
       </form>
+      <% } %> 
     </div>
-
-  <% }) %>
-
+    
+    <% }) %>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>

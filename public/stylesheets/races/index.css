@@ -3,6 +3,14 @@
   justify-content: center;
 }
 
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+  max-width: 1600px;
+}
 
 .text-decoration-none {
   text-decoration: none;
@@ -11,17 +19,18 @@
 .card {
   display: flex;
   width: 300px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: 2px solid black;
   border-radius: 10px;
   color: black;
-  padding: 15px;
-  margin: 20px auto;
+  padding: 10px;
 }
 
 .card > img {
   border-radius: 10px;
   height: 96px;
+  width: 200px;
+  margin: auto;
 }
 
 .card-body {
